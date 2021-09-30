@@ -70,7 +70,7 @@ class TodaysWeather extends StatelessWidget {
                                 color: Colors.white,
                                 fontWeight: FontWeight.w400),
                             children: [
-                              TextSpan(text: "°C",style: TextStyle(fontSize:50,color: Colors.yellow.shade600,fontWeight: FontWeight.w400))
+                              TextSpan(text: "°C",style: TextStyle(fontSize:50,color: myYellowcolor,fontWeight: FontWeight.w400))
                             ]
                           ),
                         ),
@@ -105,7 +105,7 @@ class TodaysWeather extends StatelessWidget {
                       alignment: Alignment.center,
                       child: Icon(
                         Icons.location_on_outlined,
-                        color: Colors.yellow.shade600,
+                        color: myYellowcolor,
                       ),
                       //Image.network("http://openweathermap.org/img/wn/11d@2x.png",fit: BoxFit.fitHeight,),
                     ),

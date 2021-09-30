@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:weather_forecast/providers/get_current_location_provider.dart';
 import 'package:weather_forecast/screens/weather_screen.dart';
 
 MaterialColor mycolor = MaterialColor(
@@ -17,6 +19,22 @@ MaterialColor mycolor = MaterialColor(
 
   },
 );
+MaterialColor myYellowcolor = MaterialColor(
+  0xFFECC238,
+  <int, Color>{
+    50: Color(0xFFECC238),
+    100: Color(0xFFECC238),
+    200: Color(0xFFECC238),
+    300: Color(0xFFECC238),
+    400: Color(0xFFECC238),
+    500: Color(0xFFECC238),
+    600: Color(0xFFECC238),
+    700: Color(0xFFECC238),
+    800: Color(0xFFECC238),
+    900: Color(0xFFECC238),
+
+  },
+);
 MaterialColor myaccentcolor = MaterialColor(
   0xFF1A1C49,
   <int, Color>{
@@ -31,12 +49,18 @@ MaterialColor myaccentcolor = MaterialColor(
     800: Color(  0xFF1A1C49),
     900: Color(  0xFF1A1C49),
 
-
-
   },
 );
 void main() {
-  runApp(MyApp());
+
+  return runApp(MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (BuildContext context) => GetCurrentLocationProvider(),
+        ),
+
+      ],
+      child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
