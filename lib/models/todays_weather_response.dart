@@ -10,34 +10,34 @@ String todaysWeatherResponseToJson(TodaysWeatherResponse data) => json.encode(da
 
 class TodaysWeatherResponse {
   TodaysWeatherResponse({
-    required this.coord,
-    required this.weather,
-    required this.base,
-    required  this.main,
-    required  this.visibility,
-    required  this.wind,
-    required  this.clouds,
-    required  this.dt,
-    required  this.sys,
-    required  this.timezone,
-    required  this.id,
-    required  this.name,
-    required this.cod,
+     this.coord,
+     this.weather,
+     this.base,
+      this.main,
+      this.visibility,
+      this.wind,
+      this.clouds,
+      this.dt,
+      this.sys,
+      this.timezone,
+      this.id,
+      this.name,
+      this.cod,
   });
 
-  Coord coord;
-  List<Weather> weather;
-  String base;
-  Main main;
-  int visibility;
-  Wind wind;
-  Clouds clouds;
-  int dt;
-  Sys sys;
-  int timezone;
-  int id;
-  String name;
-  int cod;
+  Coord? coord;
+  List<Weather>? weather;
+  String? base;
+  Main? main;
+  int? visibility;
+  Wind? wind;
+  Clouds? clouds;
+  int? dt;
+  Sys? sys;
+  int? timezone;
+  int? id;
+  String? name;
+  int? cod;
 
   factory TodaysWeatherResponse.fromJson(Map<String, dynamic> json) => TodaysWeatherResponse(
     coord: Coord.fromJson(json["coord"]),
@@ -56,15 +56,15 @@ class TodaysWeatherResponse {
   );
 
   Map<String, dynamic> toJson() => {
-    "coord": coord.toJson(),
-    "weather": List<dynamic>.from(weather.map((x) => x.toJson())),
+    "coord": coord!.toJson(),
+    "weather": List<dynamic>.from(weather!.map((x) => x.toJson())),
     "base": base,
-    "main": main.toJson(),
+    "main": main!.toJson(),
     "visibility": visibility,
-    "wind": wind.toJson(),
-    "clouds": clouds.toJson(),
+    "wind": wind!.toJson(),
+    "clouds": clouds!.toJson(),
     "dt": dt,
-    "sys": sys.toJson(),
+    "sys": sys!.toJson(),
     "timezone": timezone,
     "id": id,
     "name": name,

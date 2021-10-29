@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:weather_forecast/providers/get_current_location_provider.dart';
+import 'package:weather_forecast/providers/get_todays_weather_provider.dart';
 import 'package:weather_forecast/screens/weather_screen.dart';
 
 MaterialColor mycolor = MaterialColor(
@@ -51,12 +52,15 @@ MaterialColor myaccentcolor = MaterialColor(
 
   },
 );
-void main() {
+Future<void> main() async {
 
   return runApp(MultiProvider(
       providers: [
         ChangeNotifierProvider(
           create: (BuildContext context) => GetCurrentLocationProvider(),
+        ),
+        ChangeNotifierProvider(
+          create: (BuildContext context) => GetTodaysWeatherProvider(),
         ),
 
       ],
